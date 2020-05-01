@@ -11,12 +11,14 @@ public class LoggingController {
 	private static Logger logger = Logger.getLogger(LoggingController.class);
 
 	public LoggingController() {
-		logger.info("obj created. \t" + this.getClass().getSimpleName());
+		System.out.println("SOUT::  obj created. \t" + this.getClass().getSimpleName());
+		logger.warn("obj created. \t" + this.getClass().getSimpleName());
 	}
 
 	@RequestMapping("/msg.do")
 	public String getMessage(ModelMap model) {
-		logger.info("invoked get message...");
+		logger.info("inside getMessage() of controller.....");
+		System.out.println("SOUT::  inside getMessage() of controller.....");
 		logger.error("Logger controller error message..!!!");
 
 		model.addAttribute("msg", "Hello Everyone...");
